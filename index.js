@@ -1,13 +1,8 @@
-// My requirement
-// keep track of scores
-// Best of 5, first to 3 wins
-// declare winner
-
 console.log("Welcome to rock paper and scissors!");
 
 // 2
 function getComputerChoice() {
-  // Get random choice for computer (rock, paper, scissors)
+  // Get random computer choices based on number 0, 1, and 3
   let computerRandom = Math.floor(Math.random() * 3);
   if (computerRandom == 0) {
     return "rock";
@@ -20,7 +15,7 @@ function getComputerChoice() {
 
 // 3
 function getHumanChoice() {
-  // Get human choice through prompt
+  // Get human choice based on user prompt
   let answer = prompt("Lets play rock, paper, scissors").toLowerCase();
 
   if (answer == "rock") {
@@ -36,65 +31,68 @@ function getHumanChoice() {
 
 // 6
 function playGame() {
-  // Play the game for best of 5, who gets 3 rounds wins
-
-  // Odin requirement
-  // Your game will play 5 rounds.
-  // You will write a function named playGame that calls playRound to play 5 rounds,
-  // keeps track of the scores and declares a winner at the end.
-
-  // 4
+  // 4 Score counter
   let humanScore = 0;
   let computerScore = 0;
 
-  // Logs the winner
-  if (humanScore >= 3) {
-    console.log("Player wins!");
-  } else if (computerScore >= 3) {
-    console.log("Computer wins!");
+  function score() {
+    console.log("Human score is ", humanScore);
+    console.log("Computer score is ", computerScore);
   }
 
-  // 5
-  function playRound(humanChoice, computerChoice) {
+  // 5 Play a single round
+  function playRound() {
+    const computerChoice = getComputerChoice();
+    const humanChoice = getHumanChoice();
+    console.log("Computer's Choice: ", computerChoice);
+    console.log("Player's Choice: ", humanChoice);
+
     // Get round winners
     if (computerChoice === humanChoice) {
       console.log("Its a tie!");
     } else if (computerChoice === "paper" && humanChoice === "rock") {
       console.log("Computer wins, paper beats rock");
-      return computerScore++;
+      computerScore++;
     } else if (computerChoice === "scissors" && humanChoice === "paper") {
       console.log("Computer wins, scissors beats paper");
-      return computerScore++;
+      computerScore++;
     } else if (computerChoice === "rock" && humanChoice === "scissors") {
       console.log("Computer wins, rock beats scissors");
-      return computerScore++;
+      computerScore++;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
       console.log("Player wins, paper beats rock");
-      return humanScore++;
+      humanScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
       console.log("Player wins, scissors beats paper");
-      return humanScore++;
+      humanScore++;
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
       console.log("Player wins, rock beats scissors");
-      return humanScore++;
+      humanScore++;
     }
   }
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+  playRound();
+  score();
+  playRound();
+  score();
+  playRound();
+  score();
+  playRound();
+  score();
+  playRound();
+  score();
 
-  // Log chocies for human and computer
-  console.log("Human choose " + humanSelection);
-  console.log("Computer choose " + computerSelection);
-  // Play each round using humanSelection function and computerFunction as argument for playRound function
-  playRound(humanSelection, computerSelection);
-  // Logs the score round for computer and human
-  console.log("Human score is " + humanScore);
-  console.log("Computer score is " + computerScore);
+  if (computerScore > 3 || computerScore > humanScore) {
+    console.log("COMPUTER WIN!");
+  } else if (humanScore > 3 || humanScore > computerScore) {
+    console.log("YOU WIN!");
+  } else {
+    console.log("It's a TIE!");
+  }
 }
-// This is wrong and i dont know how to create playGame function
-// Play the game for 5 round
+
 playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+
+// My requirement
+// keep track of scores
+// Best of 5, first to 3 wins
+// declare winner
