@@ -10,13 +10,13 @@ The game is build with the intention to be play using prompt. Each round the win
 
 ## Things i learned
 
-Create number (math.floor)
-Create random (math.random)
-Variables
-Conditionals
-Function
-Function callbacks
-Function return values
+- Create number (math.floor)
+- Create random (math.random)
+- Variables
+- Conditionals
+- Function
+- Function callbacks
+- Function return values
 
 ## Here are some feature that i intend to add in the near future
 
