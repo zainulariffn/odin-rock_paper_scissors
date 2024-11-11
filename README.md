@@ -6,12 +6,12 @@ Welcome to my first JavaScript project: the classic Rock, Paper, Scissors game, 
 
 ## Description
 
-The game is build with the intention to be play using prompt. Each round the winners will be visible on the console. The game to be play best of 5 rounds, and who gets the three score win. Try to beat the computer cause it ain’t that easy! Feel free to play the game and report bug if any.
+The game is build with the intention to be play using prompt. Each round the winners will be visible on the console. The game to be play best of 5 rounds, and who gets the 3 round wins first, WIN the game. Try to beat the computer cause it ain’t that easy! Feel free to play the game and report bug if any.
 
 ## Things i learned
 
-- Create number (math.floor)
-- Create random (math.random)
+- Round number to the nearest integer (math.floor)
+- Create random number (math.random)
 - Variables
 - Conditionals
 - Function
