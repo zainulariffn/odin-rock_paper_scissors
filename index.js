@@ -1,98 +1,90 @@
+// My requirement
+// keep track of scores
+// Best of 5, first to 3 wins
+// declare winner
+
 console.log("Welcome to rock paper and scissors!");
 
-// 2
 function getComputerChoice() {
-  // Get random computer choices based on number 0, 1, and 3
-  let computerRandom = Math.floor(Math.random() * 3);
-  if (computerRandom == 0) {
-    return "rock";
-  } else if (computerRandom == 1) {
-    return "paper";
-  } else if (computerRandom == 2) {
-    return "scissors";
+  // Get random computer choices based on number 0, 1, and 2
+  let computerChoice = Math.floor(Math.random() * 3);
+  if (computerChoice === 0) {
+    return "Rock";
+  } else if (computerChoice === 1) {
+    return "Paper";
+  } else {
+    return "Scissors";
   }
 }
 
 // 3
 function getHumanChoice() {
   // Get human choice based on user prompt
-  let answer = prompt("Lets play rock, paper, scissors").toLowerCase();
-
-  if (answer == "rock") {
-    return "rock";
-  } else if (answer == "paper") {
-    return "paper";
-  } else if (answer == "scissors") {
-    return "scissors";
-  } else {
-    alert("Please enter only rock, paper or scissors!");
+  let humanChoice = window.prompt("Make a choice: Rock, Paper, or Scissors");
+  if (humanChoice.toLowerCase() === "rock") {
+    return "Rock";
+  } else if (humanChoice.toLowerCase() === "paper") {
+    return "Paper";
+  } else if (humanChoice.toLowerCase() === "scissors") {
+    return "Scissors";
   }
 }
-
-// 6
+// 6 Play best of 5, first to 3 wins
 function playGame() {
   // 4 Score counter
   let humanScore = 0;
   let computerScore = 0;
-
-  function score() {
-    console.log("Human score is ", humanScore);
-    console.log("Computer score is ", computerScore);
-  }
-
-  // 5 Play a single round
-  function playRound() {
-    const computerChoice = getComputerChoice();
-    const humanChoice = getHumanChoice();
-    console.log("Computer's Choice: ", computerChoice);
-    console.log("Player's Choice: ", humanChoice);
-
-    // Get round winners
-    if (computerChoice === humanChoice) {
-      console.log("Its a tie!");
-    } else if (computerChoice === "paper" && humanChoice === "rock") {
-      console.log("Computer wins, paper beats rock");
-      computerScore++;
-    } else if (computerChoice === "scissors" && humanChoice === "paper") {
-      console.log("Computer wins, scissors beats paper");
-      computerScore++;
-    } else if (computerChoice === "rock" && humanChoice === "scissors") {
-      console.log("Computer wins, rock beats scissors");
-      computerScore++;
-    } else if (humanChoice === "paper" && computerChoice === "rock") {
-      console.log("Player wins, paper beats rock");
-      humanScore++;
-    } else if (humanChoice === "scissors" && computerChoice === "paper") {
-      console.log("Player wins, scissors beats paper");
-      humanScore++;
-    } else if (humanChoice === "rock" && computerChoice === "scissors") {
-      console.log("Player wins, rock beats scissors");
-      humanScore++;
+  for (let i = 0; true; i++) {
+    function score() {
+      console.log("Player Score: ", humanScore);
+      console.log("Computer Score: ", computerScore);
     }
-  }
-  playRound();
-  score();
-  playRound();
-  score();
-  playRound();
-  score();
-  playRound();
-  score();
-  playRound();
-  score();
+    function playRound() {
+      // 5 Play a single round
+      const computerChoice = getComputerChoice();
+      const humanChoice = getHumanChoice();
+      console.log("Computer's Choice: ", computerChoice);
+      console.log("Player's Choice: ", humanChoice);
+      // Get round winners
+      if (humanChoice == "Rock" && computerChoice == "Rock") {
+        console.log("Draw!");
+      } else if (humanChoice == "Rock" && computerChoice == "Paper") {
+        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+      } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+      } else if (humanChoice == "Paper" && computerChoice == "Rock") {
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+      } else if (humanChoice == "Paper" && computerChoice == "Paper") {
+        console.log("Draw!");
+      } else if (humanChoice == "Paper" && computerChoice == "Scissors") {
+        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+      } else if (humanChoice == "Scissors" && computerChoice == "Rock") {
+        console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+      } else if (humanChoice == "Scissors" && computerChoice == "Paper") {
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+      } else if (humanChoice == "Scissors" && computerChoice == "Scissors") {
+        console.log("Draw!");
+      }
+    }
 
-  if (computerScore > 3 || computerScore > humanScore) {
-    console.log("COMPUTER WIN!");
-  } else if (humanScore > 3 || humanScore > computerScore) {
-    console.log("YOU WIN!");
-  } else {
-    console.log("It's a TIE!");
+    playRound();
+    score();
+    // Get game winners
+    if (humanScore == 3) {
+      console.log("YOU WIN!");
+      return;
+    } else if (computerScore == 3) {
+      console.log("YOU LOSE!");
+      return;
+    }
   }
 }
 
+// Inits. and Event Listeners
 playGame();
-
-// My requirement
-// keep track of scores
-// Best of 5, first to 3 wins
-// declare winner
