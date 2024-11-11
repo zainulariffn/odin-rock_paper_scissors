@@ -22,4 +22,3 @@ The game is build with the intention to be play using prompt. Each round the win
 ## Here are some feature that i intend to add in the near future
 
 - RPS game to be played interactively and not using console.
-- First to 3 round wins.
