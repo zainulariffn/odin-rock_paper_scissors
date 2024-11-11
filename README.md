@@ -17,6 +17,7 @@ The game is build with the intention to be play using prompt. Each round the win
 - Function
 - Function callbacks
 - Function return values
+- Loop control structures
 
 ## Here are some feature that i intend to add in the near future
 
