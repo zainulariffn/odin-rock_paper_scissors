@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Welcome to my first project: the classic Rock, Paper, Scissors game, built with pure JavaScript as part of The Odin Project curriculum.
+Welcome to my first JavaScript project: the classic Rock, Paper, Scissors game, built with pure JavaScript as part of The Odin Project curriculum.
 
 ## Description
 
-The game is build with the intention to be play using prompt. Each round the winners will be visible on the console. The game to be play with 5 rounds and who gets the highest score win. Try to beat the computer cause it ain’t that easy! Feel free to play the game and report bug if any.
+The game is build with the intention to be play using prompt. Each round the winners will be visible on the console. The game to be play best of 5 rounds, and who gets the three score win. Try to beat the computer cause it ain’t that easy! Feel free to play the game and report bug if any.
 
 ## Things i learned
 
