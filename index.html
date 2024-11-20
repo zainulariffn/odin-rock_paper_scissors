@@ -3,9 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="index.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <title>Zainul game</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="main">
+          <h1 class="play">
+            Welcome to the ROCK, PAPER and SCISSORS playground!
+          </h1>
+          <p class="play-p">Pick your move</p>
+        </div>
+        <div class="selection">
+          <div class="btn-fl">
+            <button class="btn rock-choice">Rock</button>
+            <button class="btn paper-choice">Paper</button>
+            <button class="btn scissors-choice">Scissors</button>
+          </div>
+          <div class="container-box">
+            <p class="play-comp">Player</p>
+            <div class="box"></div>
+            <p class="play-comp">Opponent</p>
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
