@@ -53,6 +53,10 @@ html {
   font-size: 2rem;
 }
 
-.box {
-  border: 100px solid #fff;
+.box-player,
+.box-computer {
+  width: 250px;
+  height: 250px;
+  color: aliceblue;
+  border: 10px solid #009;
 }
